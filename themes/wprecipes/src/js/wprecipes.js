@@ -11,6 +11,8 @@
         $('.wprecipes__nav').toggleClass('wprecipes__nav--open');
     });
 
+    console.log('test');
+
     /**
      * Single Recipe
      *
