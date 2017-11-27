@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * Favourites Reverse Engineered from Read Me Later:
+ * https://www.sitepoint.com/premium/books/better-wordpress-development
+ *
+ * TODO update to use rest api
+ */
 if ( ! class_exists( 'FavouriteRecipe' ) ) {
 	class FavouriteRecipe {
 
@@ -40,7 +46,7 @@ if ( ! class_exists( 'FavouriteRecipe' ) ) {
 		public function read_me_later() {
 			check_ajax_referer( 'wprecipes-nonce', 'security' );
 			$wprecipes_post_id = $_POST['post_id'];
-			$echo        = array();
+			$echo              = array();
 
 			if ( get_user_meta( wp_get_current_user()->ID, 'wprecipes_post_ids', true ) !== null ) {
 				$value = get_user_meta( wp_get_current_user()->ID, 'wprecipes_post_ids', true );
@@ -89,7 +95,6 @@ if ( ! class_exists( 'FavouriteRecipe' ) ) {
 
 				<?php endforeach;
 				wp_reset_postdata();
-
 			endif;
 
 		}
@@ -97,7 +102,6 @@ if ( ! class_exists( 'FavouriteRecipe' ) ) {
 		public function wprecipes_register_widgets() {
 			register_widget( 'WPRecipes_Widget' );
 		}
-
 	}
 
 	/**
