@@ -6,6 +6,7 @@ function wprecipes_scripts() {
 	wp_enqueue_style( 'wprecipes_gfonts', 'https://fonts.googleapis.com/css?family=Lora|Nunito' );
 
 	wp_enqueue_style( 'owl_carousel', get_stylesheet_directory_uri() . '/src/lib/owl-carousel/assets/owl.carousel.min.css' );
+	wp_enqueue_style( 'owl_carousel_theme', get_stylesheet_directory_uri() . '/src/lib/owl-carousel/assets/owl.theme.default.css' );
 
 	wp_enqueue_script( 'jquery' );
 	wp_enqueue_script( 'owl_carousel', get_stylesheet_directory_uri() . '/src/lib/owl-carousel/owl.carousel.min.js', array( 'jquery' ), '', true );

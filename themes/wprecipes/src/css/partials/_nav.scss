@@ -4,14 +4,11 @@
    * Header Beet Logo
    */
   &__logo {
-    //display:inline-block;
-    //padding: 1rem;
     &__svg {
       fill: $color-background;
-
-      //max-width: 100%;
       stroke: $color-dark;
       stroke-width: 10px;
+      padding: .5rem;
     }
   }
 
@@ -22,10 +19,8 @@
     background: $color-dark;
     display: flex;
     flex-flow: column;
-
     max-height: 0;
     overflow: hidden;
-
     transition: max-height .5s ease-in-out;
 
     @include tablet {
@@ -45,14 +40,23 @@
     &__item {
       flex: 1 1 auto;
       display: flex;
+      
+      &.current-menu-item {
+        a {
+          background: lighten($color-dark, 10%);
+        }
+      }
+
       &__link {
         display: block;
         width: 100%;
         text-align: center;
         background: lighten($color-dark, 5%);
         padding: 1rem;
+        color: darken($color-lightest, 5%);
         &:hover {
           background: lighten($color-dark, 10%);
+          color: $color-lightest;
         }
         // link :hover
       }

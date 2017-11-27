@@ -59,5 +59,14 @@
   }
 }
 
+.wprecipes__toggle {
+  @include tablet {
+    display: none;
+  }
+  @include desktop {
+    display: none;
+  }
+}
+
 
 

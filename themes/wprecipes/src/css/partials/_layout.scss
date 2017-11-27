@@ -6,10 +6,32 @@
   margin: auto;
   max-width: $site-maxwidth;
 
+  &__description {
+    text-align: center;
+    font-size: 1.5rem;
+    @include tablet {
+      text-align: right;
+    }
+    @include desktop {
+      text-align: right;
+    }
+  }
   &--flex-wrapper {
     display: flex;
     justify-content: space-around;
     align-items: center;
+
+    @include tablet {
+      justify-content: space-between;
+    }
+    @include desktop {
+      justify-content: space-between;
+    }
+
+    &__item {
+      flex: 1 1 auto;
+      padding: 1rem;
+    }
   }
 
   &__site {
