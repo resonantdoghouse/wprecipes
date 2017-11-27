@@ -37,7 +37,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('scripts', ['lint'], function () {
-    gulp.src('./src/js/**/*.js')
+    gulp.src('./src/js/*.js')
         .pipe(uglify())
         .pipe(rename({
             extname: '.min.js'
