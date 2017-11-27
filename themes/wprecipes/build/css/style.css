@@ -94,16 +94,34 @@ p {
   .wprecipes__page-title {
     font-size: 2rem; }
   .wprecipes__main {
-    flex: 2 1 75%;
+    width: 100%;
+    flex: 1 1 100%;
     background: #f2f2f2;
     padding: .5rem 1rem; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .wprecipes__main {
+        width: 75%;
+        flex: 1 1 75%; } }
+    @media (min-width: 1024px) {
+      .wprecipes__main {
+        width: 75%;
+        flex: 1 1 75%; } }
     .wprecipes__main__post {
       display: flex;
       flex-direction: column; }
   .wprecipes__sidebar {
-    flex: 1 2 25%;
+    width: 100%;
+    flex: 1 1 100%;
     padding: .5rem 1rem;
     background: #e6e6e6; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .wprecipes__sidebar {
+        width: 25%;
+        flex: 1 1 25%; } }
+    @media (min-width: 1024px) {
+      .wprecipes__sidebar {
+        width: 25%;
+        flex: 1 1 25%; } }
   .wprecipes__footer {
     background: #e6e6e6; }
 
@@ -149,22 +167,43 @@ p {
     .wprecipes__header .wprecipes__toggle-button {
       display: none; } }
 
-.wprecipes__related-products {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.wprecipes__recipe {
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 2px dashed #caa8ad; }
+  .wprecipes__recipe__items {
+    padding: 0;
+    list-style: none; }
+    .wprecipes__recipe__items__item {
+      padding: 1rem;
+      border-bottom: 1px solid #ddc8cb; }
+
+.wprecipes__favourites {
   display: flex;
-  flex-flow: row wrap; }
-  .wprecipes__related-products__item {
-    flex: 1 1 auto; }
+  flex-flow: row nowrap;
+  justify-content: space-around; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .wprecipes__favourites {
+      flex-flow: column; } }
+  @media (min-width: 1024px) {
+    .wprecipes__favourites {
+      flex-flow: column; } }
+
+.wprecipes__owlcarousel {
+  overflow: hidden;
+  max-width: 100%; }
+  .wprecipes__owlcarousel .owl-carousel .owl-stage {
+    display: flex; }
+    .wprecipes__owlcarousel .owl-carousel .owl-stage .owl-item {
+      float: none; }
 
 .wprecipes.woocommerce-page {
   /**
-       * Form Actions
-       */
+   * Form Actions
+   */
   /**
-       * Products Grid
-       */ }
+   * Products Grid
+   */ }
   .wprecipes.woocommerce-page .button.alt {
     background: #28181b;
     color: #fff; }
@@ -191,13 +230,12 @@ p {
       .wprecipes.woocommerce-page .products .product .button {
         margin-top: auto; }
 
-.wprecipes__recipe {
-  padding: 1rem;
-  margin: 1rem 0;
-  border: 2px dashed #caa8ad; }
-  .wprecipes__recipe__items {
-    padding: 0;
-    list-style: none; }
-    .wprecipes__recipe__items__item {
-      padding: 1rem;
-      border-bottom: 1px solid #ddc8cb; }
+.wprecipes__related-products {
+  text-align: center;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap; }
+  .wprecipes__related-products__item {
+    flex: 1 1 auto; }

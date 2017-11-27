@@ -1,0 +1,14 @@
+.wprecipes__owlcarousel {
+  overflow:hidden;
+  max-width: 100%;
+
+  .owl-carousel {
+    .owl-stage {
+      display: flex;
+
+      .owl-item {
+        float: none;
+      }
+    }
+  }
+}

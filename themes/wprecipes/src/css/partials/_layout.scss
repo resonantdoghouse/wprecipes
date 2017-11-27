@@ -13,7 +13,6 @@
   }
 
   &__site {
-
     display: flex;
     flex: 1 1 auto;
     flex-flow: column;
@@ -28,13 +27,23 @@
 
   &__page-title {
     font-size: 2rem;
-    //margin: 1rem;
   }
 
   &__main {
-    flex: 2 1 75%;
+    width: 100%;
+    flex: 1 1 100%;
     background: darken($color-lightest, 5%);
     padding: .5rem 1rem;
+
+    @include tablet {
+      width: 75%;
+      flex: 1 1 75%;
+    }
+    @include desktop {
+      width: 75%;
+      flex: 1 1 75%;
+    }
+
     &__post {
       display: flex;
       flex-direction: column;
@@ -43,9 +52,19 @@
   }
 
   &__sidebar {
-    flex: 1 2 25%;
+    width: 100%;
+    flex: 1 1 100%;
     padding: .5rem 1rem;
     background: darken($color-lightest, 10%);
+
+    @include tablet {
+      width: 25%;
+      flex: 1 1 25%;
+    }
+    @include desktop {
+      width: 25%;
+      flex: 1 1 25%;
+    }
   }
 
   &__footer {

@@ -1,0 +1,19 @@
+.wprecipes__favourites {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-around;
+
+  @include tablet {
+    flex-flow: column;
+  }
+  @include desktop {
+    flex-flow: column;
+  }
+
+
+  &__item {
+    &__content {
+
+    }
+  }
+}

@@ -1,10 +1,11 @@
 (function ($) {
 
+
+
     var postId = wprecipes_rest_obj.post_id;
     var localStorageName = 'recipeQuantityMod' + postId;
 
     console.log(localStorageName);
-
     /**
      * Local Storage
      * check local storage capabilities
@@ -63,6 +64,26 @@
     $decreaseRecipe.on('click', function () {
         modifyRecipeAmount('decrease');
     });
+
+
+
+
+
+
+
+
+
+    $('.owl-carousel').owlCarousel();
+
+
+
+
+
+
+
+
+
+
 
 
 })(jQuery);

@@ -8,8 +8,9 @@ function wprecipes_scripts() {
 	wp_enqueue_style( 'owl_carousel', get_stylesheet_directory_uri() . '/src/lib/owl-carousel/assets/owl.carousel.min.css' );
 
 	wp_enqueue_script( 'jquery' );
-	wp_enqueue_script( 'wprecipes', get_stylesheet_directory_uri() . '/build/js/wprecipes.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'owl_carousel', get_stylesheet_directory_uri() . '/src/lib/owl-carousel/owl.carousel.min.js', array( 'jquery' ), '', true );
+
+	wp_enqueue_script( 'wprecipes', get_stylesheet_directory_uri() . '/build/js/wprecipes.min.js', array( 'jquery', 'owl_carousel' ), '', true );
 
 	wp_localize_script( 'wprecipes', 'wprecipes_rest_obj',
 		array(

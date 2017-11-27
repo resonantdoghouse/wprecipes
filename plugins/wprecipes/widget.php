@@ -3,7 +3,7 @@
 class WPRecipes_Widget extends WP_Widget {
 	function __construct() {
 		parent::__construct( 'wprecipes__widget',
-			__( 'Read Me Later', 'text_domain' ),
+			__( 'Favourites', 'text_domain' ),
 			array(
 				'classname'   => 'wprecipes__widget',
 				'description' => __( 'Favourite Recipes widget for displaying Favourite Recipes', 'text_domain' ),
@@ -48,7 +48,7 @@ class WPRecipes_Widget extends WP_Widget {
 			echo $args['before_title'] . $title . $args['after_title'];
 		endif;
 
-		echo '<div class="wprecipes__favourites__wrapper">';
+		echo '<div class="wprecipes__favourites">';
 
 		$ids = get_user_meta( wp_get_current_user()->ID, 'wprecipes_post_ids', true );
 
@@ -69,8 +69,8 @@ class WPRecipes_Widget extends WP_Widget {
 			foreach ( $wprecipes_posts as $post ) : setup_postdata( $post );
 				$img = wp_get_attachment_image_src( get_post_thumbnail_id() ); ?>
 
-                <div class="wprecipes__favourites">
-                    <div class="wprecipes__favourites__content">
+                <div class="wprecipes__favourites__item">
+                    <div class="wprecipes__favourites__item__content">
                         <h2>
                             <a href="<?php echo get_the_permalink(); ?>">
 								<?php the_title(); ?>
