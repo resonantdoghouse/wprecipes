@@ -10,3 +10,4 @@
 - Dashboard Widget with loop of recipe posts
 - Favourite recipe posts and show in sidebar widget admin ajax
 - gulp workflow for theme, npm install to setup
+- WooCommerce theme support and some templating

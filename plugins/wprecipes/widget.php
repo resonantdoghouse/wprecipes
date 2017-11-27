@@ -15,7 +15,7 @@ class WPRecipes_Widget extends WP_Widget {
 		if ( isset( $instance['title'] ) ):
 			$title = $instance['title'];
 		else:
-			$title = __( 'Favourite Recipes', 'text_domain' );
+			$title = __( 'Recipe Box', 'text_domain' );
 
 		endif;
 		?>
@@ -89,7 +89,12 @@ class WPRecipes_Widget extends WP_Widget {
 
 		else :
 
-			echo '<p>You have no saved posts now.</p>';
+			if ( is_user_logged_in() ):
+				echo '<p>' . __( 'No favourites yet', 'wprecipes' ) . '</p>';
+
+            elseif ( ! is_user_logged_in() ):
+	            echo '<p><a href="' . wp_login_url() . '">' . __( 'Login to add favourites', 'wprecipes' ) . '</a></p>';
+			endif;
 
 		endif;
 		echo '</div>';
