@@ -1,0 +1,203 @@
+/**
+ * Colors
+ */
+/* Fix the box model sizing */
+*, *::before, *::after {
+  box-sizing: border-box; }
+
+a {
+  text-decoration: none;
+  color: #d43850; }
+  a:hover {
+    color: #dd6275; }
+
+img {
+  max-width: 100%;
+  height: auto; }
+
+body {
+  background: #d6defc; }
+
+/**
+ * Typography
+ */
+h1, h2, h3, h4, h5, h6, a {
+  font-family: 'Nunito', sans-serif; }
+
+body {
+  font-family: 'Lora', serif; }
+
+p {
+  line-height: 1.5rem; }
+
+.wprecipes {
+  /**
+   * Header Beet Logo
+   */ }
+  .wprecipes__logo__svg {
+    fill: #caa8ad;
+    stroke: #28181b;
+    stroke-width: 10px; }
+  .wprecipes__nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    background: #28181b;
+    display: flex;
+    flex-flow: column;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .5s ease-in-out; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .wprecipes__nav {
+        max-height: 300px;
+        flex-flow: row nowrap; } }
+    @media (min-width: 1024px) {
+      .wprecipes__nav {
+        max-height: 300px;
+        flex-flow: row nowrap; } }
+    .wprecipes__nav--open {
+      max-height: 300px;
+      transition: max-height .3s ease-in-out; }
+    .wprecipes__nav__item {
+      flex: 1 1 auto;
+      display: flex; }
+      .wprecipes__nav__item__link {
+        display: block;
+        width: 100%;
+        text-align: center;
+        background: #382225;
+        padding: 1rem; }
+        .wprecipes__nav__item__link:hover {
+          background: #472c30; }
+
+.wprecipes {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 32px);
+  margin: auto;
+  max-width: 1240px; }
+  .wprecipes--flex-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; }
+  .wprecipes__site {
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: column; }
+    @media (min-width: 768px) and (max-width: 1023px) {
+      .wprecipes__site {
+        flex-flow: row nowrap; } }
+    @media (min-width: 1024px) {
+      .wprecipes__site {
+        flex-flow: row nowrap; } }
+  .wprecipes__page-title {
+    font-size: 2rem; }
+  .wprecipes__main {
+    flex: 2 1 75%;
+    background: #f2f2f2;
+    padding: .5rem 1rem; }
+    .wprecipes__main__post {
+      display: flex;
+      flex-direction: column; }
+  .wprecipes__sidebar {
+    flex: 1 2 25%;
+    padding: .5rem 1rem;
+    background: #e6e6e6; }
+  .wprecipes__footer {
+    background: #e6e6e6; }
+
+.wprecipes__toggle-button {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  transform: rotate(0deg);
+  transition: .5s ease-in-out;
+  cursor: pointer; }
+  .wprecipes__toggle-button span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background: #d3531a;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out; }
+  .wprecipes__toggle-button span:nth-child(1) {
+    top: 0px; }
+  .wprecipes__toggle-button span:nth-child(2), .wprecipes__toggle-button span:nth-child(3) {
+    top: 15px; }
+  .wprecipes__toggle-button span:nth-child(4) {
+    top: 30px; }
+  .wprecipes__toggle-button--open span:nth-child(1) {
+    top: 15px;
+    width: 0%;
+    left: 50%; }
+  .wprecipes__toggle-button--open span:nth-child(2) {
+    transform: rotate(45deg); }
+  .wprecipes__toggle-button--open span:nth-child(3) {
+    transform: rotate(-45deg); }
+  .wprecipes__toggle-button--open span:nth-child(4) {
+    top: 15px;
+    width: 0%;
+    left: 50%; }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .wprecipes__header .wprecipes__toggle-button {
+      display: none; } }
+  @media (min-width: 1024px) {
+    .wprecipes__header .wprecipes__toggle-button {
+      display: none; } }
+
+.wprecipes__related-products {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-flow: row wrap; }
+  .wprecipes__related-products__item {
+    flex: 1 1 auto; }
+
+.wprecipes.woocommerce-page {
+  /**
+       * Form Actions
+       */
+  /**
+       * Products Grid
+       */ }
+  .wprecipes.woocommerce-page .button.alt {
+    background: #28181b;
+    color: #fff; }
+    .wprecipes.woocommerce-page .button.alt:hover, .wprecipes.woocommerce-page .button.alt:focus {
+      background: #782e39;
+      color: #fff; }
+  .wprecipes.woocommerce-page .actions .coupon {
+    display: flex; }
+    .wprecipes.woocommerce-page .actions .coupon .input-text {
+      width: 8rem; }
+  .wprecipes.woocommerce-page .products {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: stretch;
+    align-items: stretch; }
+    .wprecipes.woocommerce-page .products .product {
+      background: #28181b;
+      padding: 1rem;
+      flex: 1 1 auto;
+      float: none;
+      display: flex;
+      flex-direction: column;
+      margin: 0; }
+      .wprecipes.woocommerce-page .products .product .button {
+        margin-top: auto; }
+
+.wprecipes__recipe {
+  padding: 1rem;
+  margin: 1rem 0;
+  border: 2px dashed #caa8ad; }
+  .wprecipes__recipe__items {
+    padding: 0;
+    list-style: none; }
+    .wprecipes__recipe__items__item {
+      padding: 1rem;
+      border-bottom: 1px solid #ddc8cb; }

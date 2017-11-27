@@ -1,0 +1,59 @@
+.wprecipes.woocommerce-page {
+
+
+      .button {
+        &.alt {
+          background: $color-dark;
+          color: $color-lightest;
+          &:hover, &:focus {
+            background: $color-accent;
+            color: $color-lightest;
+          }
+          // :hover
+        }
+        // .alt
+      }
+      // .button
+
+      /**
+       * Form Actions
+       */
+      .actions {
+        .coupon {
+          display: flex;
+          .input-text {
+            width: 8rem;
+          }
+        }
+        // .coupon
+      }
+      // .actions
+
+      /**
+       * Products Grid
+       */
+      .products {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: stretch;
+        align-items: stretch;
+        .product {
+          background: $color-dark;
+          padding: 1rem;
+          flex: 1 1 auto;
+          float: none;
+          display: flex;
+          flex-direction: column;
+          margin: 0;
+
+          .button {
+            margin-top: auto;
+          }
+
+        }
+      }
+      // .products
+
+
+}
+

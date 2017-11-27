@@ -1,0 +1,55 @@
+
+.wprecipes {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 32px);
+  margin: auto;
+  max-width: $site-maxwidth;
+
+  &--flex-wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  &__site {
+
+    display: flex;
+    flex: 1 1 auto;
+    flex-flow: column;
+
+    @include tablet {
+      flex-flow: row nowrap;
+    }
+    @include desktop {
+      flex-flow: row nowrap;
+    }
+  }
+
+  &__page-title {
+    font-size: 2rem;
+    //margin: 1rem;
+  }
+
+  &__main {
+    flex: 2 1 75%;
+    background: darken($color-lightest, 5%);
+    padding: .5rem 1rem;
+    &__post {
+      display: flex;
+      flex-direction: column;
+
+    }
+  }
+
+  &__sidebar {
+    flex: 1 2 25%;
+    padding: .5rem 1rem;
+    background: darken($color-lightest, 10%);
+  }
+
+  &__footer {
+    background: darken($color-lightest, 10%);
+  }
+
+}

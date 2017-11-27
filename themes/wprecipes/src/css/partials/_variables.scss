@@ -1,0 +1,20 @@
+/**
+ * Colors
+ */
+$color-primary: #673f45;
+
+$color-secondary: #d6defc;
+
+$color-lightest: #fff;
+$color-darkest: #000;
+
+// Monochromatic color palette
+$color-background: lighten($color-primary, 40);
+$color-dark: darken($color-primary, 20);
+$color-accent: saturate($color-primary, 20);
+$color-highlight: lighten(saturate($color-primary, 40), 20);
+
+// Media Queries
+$tablet-width: 768px;
+$desktop-width: 1024px;
+$site-maxwidth: 1240px;

@@ -1,0 +1,10 @@
+{
+  "require": {
+    "webdevstudios/cmb2": "^2.2"
+  },
+  "autoload": {
+    "files": [
+      "vendor/webdevstudios/cmb2/init.php"
+    ]
+  }
+}
