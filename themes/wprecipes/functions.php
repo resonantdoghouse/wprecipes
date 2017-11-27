@@ -10,8 +10,9 @@ require_once __DIR__ . '/includes/enqueue.php';
 require_once __DIR__ . '/includes/walker.php';
 require_once __DIR__ . '/includes/acf-fields.php';
 require_once __DIR__ . '/includes/customizer.php';
+require_once __DIR__ . '/includes/admin/_dashboard.php';
 require_once __DIR__ . '/includes/admin/remove-menus.php';
-require_once __DIR__ . '/includes/admin/remove-menus.php';
+
 
 /**
  * Actions & Hooks
@@ -27,7 +28,6 @@ add_action( 'widgets_init', 'wprecipes_widget_init' );
  */
 add_action( 'customize_register', 'wprecipes_customizer_settings' );
 
-add_filter( 'acf/settings/show_admin', '__return_false' );
 add_action( 'admin_init', 'wprecipes_remove_menus', 102 );
 
 /**

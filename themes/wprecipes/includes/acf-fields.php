@@ -39,8 +39,25 @@ if ( function_exists( 'acf_add_local_field_group' ) ):
 							'litre' => 'litre',
 							'ounce' => 'ounce',
 							'pound' => 'pound',
+							'other' => 'other',
 						),
-
+						'conditional_logic' => 0,
+					),
+					array(
+						'key'         => 'wprecipes_recipe_ingredient_quantity_measurement_other',
+						'label'       => 'Other',
+						'name'        => 'other',
+						'type'        => 'text',
+						'instructions'  => 'Other e.g. clove, pinch',
+						'conditional_logic' => array(
+							array(
+								array(
+									'field' => 'wprecipes_recipe_ingredient_quantity_measurement',
+									'operator' => '==',
+									'value' => 'other',
+								),
+							),
+						),
 					),
 					array(
 						'key'         => 'wprecipes_recipe_ingredient',
