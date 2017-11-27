@@ -284,6 +284,21 @@ p {
   .wprecipes__related-products__item {
     flex: 1 1 auto; }
 
+/**
+ * Ninja Forms
+ */
+.wprecipes .nf-table-display {
+  width: 100%; }
+  .wprecipes .nf-table-display .nf-before-form-content {
+    margin-bottom: 1.5rem; }
+  .wprecipes .nf-table-display .nf-field-container .ninja-forms-field {
+    padding: .5rem; }
+    .wprecipes .nf-table-display .nf-field-container .ninja-forms-field[type="button"] {
+      background: #28181b;
+      color: #fff; }
+      .wprecipes .nf-table-display .nf-field-container .ninja-forms-field[type="button"]:hover {
+        background: #382225; }
+
 .wprecipes__footer {
   text-align: center;
   padding: 1rem;

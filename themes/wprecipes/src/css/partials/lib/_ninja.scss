@@ -1,0 +1,28 @@
+/**
+ * Ninja Forms
+ */
+
+.wprecipes {
+
+  .nf-table-display {
+    width: 100%;
+
+    .nf-before-form-content {
+      margin-bottom: 1.5rem;
+    }
+    .nf-field-container {
+      .ninja-forms-field {
+        padding: .5rem;
+
+        &[type="button"] {
+          background: $color-dark;
+          color: $color-lightest;
+          &:hover {
+            background: lighten($color-dark, 5%);
+          }
+        }
+      }
+
+    }
+  }
+}
