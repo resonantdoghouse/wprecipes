@@ -11,8 +11,7 @@ require_once __DIR__ . '/includes/walker.php';
 require_once __DIR__ . '/includes/acf-fields.php';
 require_once __DIR__ . '/includes/customizer.php';
 require_once __DIR__ . '/includes/admin/remove-menus.php';
-//require_once __DIR__ . '/vendor/autoload.php';
-//require_once __DIR__ . '/includes/metaboxes.php';
+require_once __DIR__ . '/includes/admin/remove-menus.php';
 
 /**
  * Actions & Hooks
@@ -30,11 +29,6 @@ add_action( 'customize_register', 'wprecipes_customizer_settings' );
 
 add_filter( 'acf/settings/show_admin', '__return_false' );
 add_action( 'admin_init', 'wprecipes_remove_menus', 102 );
-
-//add_action( 'cmb2_admin_init', 'wprecipes_metaboxes' );
-//add_action( 'rest_api_init', 'wprecipes_register_endpoints' );
-//add_filter('wp_nav_menu_args', 'add_filter_to_menus');
-
 
 /**
  * WooCommerce theme support
