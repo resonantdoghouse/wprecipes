@@ -1,33 +1,9 @@
 (function ($) {
 
-
-    var postId = wprecipes_rest_obj.post_id;
-    var localStorageName = 'recipeQuantityMod' + postId;
-
-    console.log(localStorageName);
     /**
-     * Local Storage
-     * check local storage capabilities
+     * Nav Toggle for mobile
      */
-    if (typeof (Storage) !== "undefined") {
-        console.log('local storage allowed.');
-    } else {
-        alert('Sorry! No Web Storage support.');
-    }
-
-    // if local storage
-    if (localStorage.getItem('localStorageName')) {
-        var storedRecipeQuantityMod = localStorage.getItem('localStorageName');
-
-        $('.wprecipes__recipe__items__item__quantity').html(storedRecipeQuantityMod);
-
-    } else {
-        localStorage.setItem(localStorageName, 1);
-    }
-
-    var $navToggle = $('#wprecipes-nav-toggle'),
-        $increaseRecipe = $('#wprecipes-increase-recipe'),
-        $decreaseRecipe = $('#wprecipes-decrease-recipe');
+    var $navToggle = $('#wprecipes-nav-toggle');
 
     $navToggle.on('click', function (e) {
         e.preventDefault();
@@ -35,52 +11,81 @@
         $('.wprecipes__nav').toggleClass('wprecipes__nav--open');
     });
 
-    function modifyRecipeAmount(increment) {
-        var $quantity = $('.wprecipes__recipe__items__item__quantity').html();
-        var quantity = parseInt($quantity);
+    /**
+     * Single Recipe
+     *
+     * Change recipe values
+     * local storage of values if changed
+     * print recipe
+     */
+    if ($('.single-recipe').length) {
 
-        if (increment == 'increase' && quantity < 100) {
-            quantity++;
-            $('.wprecipes__recipe__items__item__quantity').html(quantity);
+        /**
+         * Quantity Increase Decrease
+         */
+        var $increaseRecipe = $('#wprecipes-increase-recipe'),
+            $decreaseRecipe = $('#wprecipes-decrease-recipe');
 
-            localStorage.setItem('localStorageName', quantity);
-        }
-        else if (increment == 'decrease' && quantity > 1) {
-            quantity--;
-            $('.wprecipes__recipe__items__item__quantity').html(quantity);
+        function modifyRecipeAmount(increment) {
 
-            localStorage.setItem('localStorageName', quantity);
-        }
+            if (increment == 'increase') {
 
-        console.log(parseInt(quantity));
-    }
+                // quantityIntVal ++;
+                var $quantity = $('.wprecipes__recipe__items__item__quantity');
 
-    $increaseRecipe.on('click', function () {
-        modifyRecipeAmount('increase');
-    });
+                $.each($quantity, function () {
+                    var currentVal = $(this).html().trim();
+                    var newVal = currentVal * 2;
+                    $(this).html(newVal);
+                });
 
+            }
 
-    $decreaseRecipe.on('click', function () {
-        modifyRecipeAmount('decrease');
-    });
+            else if (increment == 'decrease') {
 
+                var $quantity = $('.wprecipes__recipe__items__item__quantity');
 
-    $('.owl-carousel').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        responsive: {
-            0: {
-                items: 1
-            },
-            768: {
-                items: 2
-            },
-            1024: {
-                items: 3
+                $.each($quantity, function () {
+                    var currentVal = $(this).html().trim();
+                    var newVal = currentVal / 2;
+                    $(this).html(newVal);
+                });
+
             }
         }
-    });
 
+        $increaseRecipe.on('click', function () {
+            modifyRecipeAmount('increase');
+        });
+
+
+        $decreaseRecipe.on('click', function () {
+            modifyRecipeAmount('decrease');
+        });
+
+    }
+
+
+    /**
+     * Owl Carousel
+     */
+    if ($('.owl-carousel').length) {
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                768: {
+                    items: 2
+                },
+                1024: {
+                    items: 3
+                }
+            }
+        });
+    }
 
 })(jQuery);
