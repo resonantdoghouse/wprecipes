@@ -239,3 +239,8 @@ p {
   flex-flow: row wrap; }
   .wprecipes__related-products__item {
     flex: 1 1 auto; }
+
+.wprecipes__footer {
+  padding: 1rem;
+  display: flex;
+  justify-content: center; }

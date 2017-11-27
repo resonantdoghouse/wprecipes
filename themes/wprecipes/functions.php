@@ -45,7 +45,7 @@ add_action( 'after_setup_theme', 'woocommerce_support' );
 remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
 remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
 
-add_image_size( 'wprecipe-thumb', 120, 20, array( 'left', 'top' ) );
+add_image_size( 'wprecipe-thumb', 300, 200, array( 'center', 'center' ) );
 
 function woocommerce_support() {
 	add_theme_support( 'woocommerce' );
