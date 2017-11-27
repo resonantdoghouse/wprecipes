@@ -29,8 +29,7 @@
         function modifyRecipeAmount(increment) {
 
             if (increment == 'increase') {
-
-                // quantityIntVal ++;
+                
                 var $quantity = $('.wprecipes__recipe__items__item__quantity');
 
                 $.each($quantity, function () {
