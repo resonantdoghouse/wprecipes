@@ -3,7 +3,6 @@
  * Front Page WP Recipes
  */
 get_header(); ?>
-
     <div class="wprecipes__site">
         <main class="wprecipes__main">
 			<? if ( have_posts() ):
@@ -20,5 +19,4 @@ get_header(); ?>
         </main>
 		<? get_sidebar(); ?>
     </div>
-
 <?php get_footer();

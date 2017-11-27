@@ -1,5 +1,4 @@
 <footer class="wprecipes__footer">
-
     <div class="wprecipes__footer__nav">
 		<?php
 		wp_nav_menu( array(
@@ -8,7 +7,6 @@
 		) );
 		?>
     </div>
-
     <div class="wprecipes__info">
         <span><?php echo get_bloginfo( 'name' ); ?></span>
         <time><?php echo date( 'Y' ); ?></time>
@@ -16,5 +14,4 @@
 </footer>
 </body>
 </html>
-
 <?php wp_footer();

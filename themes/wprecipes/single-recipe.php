@@ -3,27 +3,20 @@
  * Front Page WP Recipes
  */
 get_header(); ?>
-
     <div class="wprecipes__site">
         <main class="wprecipes__main">
-
 			<? if ( have_posts() ):
 				while ( have_posts() ): the_post(); ?>
-
                     <article class="wprecipes__main__post">
                         <h1 class="wprecipes__page-title"><?php echo esc_html( get_the_title() ); ?></h1>
-
 						<?php if ( has_post_thumbnail() ):
 							the_post_thumbnail( 'large' );
 						endif; ?>
-
 						<?php the_content();
-
 						/**
 						 * ACF repeater
 						 */
-						if ( have_rows( 'wprecipes_recipe_ingredients' ) ):
-							?>
+						if ( have_rows( 'wprecipes_recipe_ingredients' ) ): ?>
                             <section id="wprecipes-recipe" class="wprecipes__recipe">
                                 <button id="wprecipes-increase-recipe">&plus;</button>
                                 <button id="wprecipes-decrease-recipe">&minus;</button>
@@ -39,7 +32,6 @@ get_header(); ?>
                                         </li>
 									<?php endwhile; ?>
                                 </ul>
-
                                 <ul>
 									<?php
 									/**
@@ -48,38 +40,26 @@ get_header(); ?>
 									$recipe_term_list = wp_get_post_terms( $post->ID, 'recipe-type',
 										array( "fields" => "all" ) );
 
-									foreach ( $recipe_term_list as $recipe_term ):
-										?>
-
+									foreach ( $recipe_term_list as $recipe_term ): ?>
                                         <li>
                                             <a href="<?php echo get_term_link( $recipe_term ); ?>">
 												<?php echo $recipe_term->name; ?>
                                             </a>
                                         </li>
-
-										<?php
-									endforeach;
-									?>
+									<?php endforeach; ?>
                                 </ul>
-
                             </section>
-							<?php
-						else :
+						<?php else :
 							// no rows found
-						endif;
-						?>
-
+						endif; ?>
                     </article>
-
 				<?php endwhile;
 			endif; ?>
-
             <h2><?php _e( 'Related Products', 'wprecipes' ); ?></h2>
 			<?php
 			$recipe_related_products_key = 'wprecipes_related_products';
 			$recipe_related_products_obj = get_field_object( $recipe_related_products_key );
 			$recipe_related_products     = get_field( $recipe_related_products_key );
-
 			if ( $recipe_related_products ): ?>
                 <ul class="wprecipes__related-products">
 					<?php foreach ( $recipe_related_products as $post ): ?>
@@ -96,9 +76,7 @@ get_header(); ?>
                 </ul>
 				<?php wp_reset_postdata(); ?>
 			<?php endif; ?>
-
         </main>
 		<? get_sidebar(); ?>
     </div>
-
 <?php get_footer();
