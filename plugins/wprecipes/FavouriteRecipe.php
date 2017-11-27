@@ -17,10 +17,9 @@ if ( ! class_exists( 'FavouriteRecipe' ) ) {
 		 * Action hooks
 		 */
 		public function init() {
-//		add_filter( 'the_excerpt', array( $this, 'favourite_button' ) );
 			add_filter( 'the_content', array( $this, 'favourite_button' ) );
 			add_action( 'wp_enqueue_scripts', array( $this, 'wprecipes_enqueue_scripts' ) );
-			add_action( 'wp_ajax_wprecipes_favourite', array( $this, 'read_me_later' ) );
+			add_action( 'wp_ajax_wprecipes_favourite', array( $this, 'wprecipes_add_favourite' ) );
 			add_action( 'widgets_init', array( $this, 'wprecipes_register_widgets' ) );
 		}
 
@@ -43,7 +42,7 @@ if ( ! class_exists( 'FavouriteRecipe' ) ) {
 			return $content;
 		}
 
-		public function read_me_later() {
+		public function wprecipes_add_favourite() {
 			check_ajax_referer( 'wprecipes-nonce', 'security' );
 			$wprecipes_post_id = $_POST['post_id'];
 			$echo              = array();
@@ -75,12 +74,9 @@ if ( ! class_exists( 'FavouriteRecipe' ) ) {
 			if ( $ids ) :
 
 				global $post;
-
 				foreach ( $wprecipes_posts as $post ) :
-
 					setup_postdata( $post );
 					$img = wp_get_attachment_image_src( get_post_thumbnail_id() ); ?>
-
                     <div class="wprecipes__favourites__post">
                         <div class="wprecipes__favourites__post__content">
                             <h5>
@@ -92,11 +88,9 @@ if ( ! class_exists( 'FavouriteRecipe' ) ) {
                              alt="<?php echo get_the_title(); ?>"
                              class="wprecipes__favourites__post__img">
                     </div>
-
 				<?php endforeach;
 				wp_reset_postdata();
 			endif;
-
 		}
 
 		public function wprecipes_register_widgets() {
@@ -108,5 +102,4 @@ if ( ! class_exists( 'FavouriteRecipe' ) ) {
 	 * Instantiate FavouriteRecipe Class
 	 */
 	new FavouriteRecipe;
-
 }

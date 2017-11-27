@@ -5,8 +5,6 @@
 get_header(); ?>
     <div class="wprecipes__site">
         <main class="wprecipes__main">
-
-
             <section id="wprecipes-recipes">
                 <h1><?php _e( 'Recipes', 'wprecipes' ); ?></h1>
                 <div class="wprecipes__owlcarousel">
@@ -33,8 +31,6 @@ get_header(); ?>
                     </div>
                 </div>
             </section>
-
-
         </main>
 		<? get_sidebar(); ?>
     </div>

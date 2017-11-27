@@ -3,16 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Wp Recipes</title>
-
 	<?php wp_head(); ?>
-
 </head>
 <body <?php body_class( 'wprecipes' ); ?>>
-
 <header class="wprecipes__header">
-
     <div class="wprecipes--flex-wrapper">
-
         <a href="<?php echo home_url( '/' ); ?>" class="wprecipes__logo wprecipes--flex-wrapper__item">
             <svg class="wprecipes__logo__svg" baseProfile="basic" xmlns="http://www.w3.org/2000/svg" width="128"
                  height="128" viewBox="0 0 138 138">
@@ -21,7 +16,6 @@
                 <description><?php echo get_bloginfo( 'name' ); ?></description>
             </svg>
         </a>
-
         <div class="wprecipes--flex-wrapper__item wprecipes__description"><?php echo get_bloginfo( 'description' ); ?></div>
         <div class="wprecipes--flex-wrapper__item wprecipes__toggle">
             <div id="wprecipes-nav-toggle" class="wprecipes__toggle-button">
@@ -31,11 +25,8 @@
                 <span></span>
             </div>
         </div>
-
     </div>
-
 	<?php
-
 	wp_nav_menu( array(
 		'container'      => 'nav',
 		'menu'           => 'WP Recipes Nav',
@@ -43,6 +34,5 @@
 		'items_wrap'     => '<ul id="%1$s" class="wprecipes__nav %2$s">%3$s</ul>',
 		'walker'         => new WPRecipes_Walker()
 	) );
-
 	?>
 </header>
