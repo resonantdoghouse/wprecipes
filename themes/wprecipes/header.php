@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo get_bloginfo( 'name' ) . ' git &dash; ' . get_the_title(); ?></title>
+    <title><?php echo get_bloginfo( 'name' ) . ' &dash; ' . get_the_title(); ?></title>
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class( 'wprecipes' ); ?>>
