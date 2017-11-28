@@ -9,16 +9,20 @@
   &__description {
     text-align: center;
     font-size: 1.5rem;
+    display: none;
     @include tablet {
+      display: block;
       text-align: right;
     }
     @include desktop {
+      display: block;
       text-align: right;
     }
   }
   &--flex-wrapper {
     display: flex;
-    justify-content: space-around;
+
+    justify-content: space-between;
     align-items: center;
 
     @include tablet {
@@ -29,7 +33,7 @@
     }
 
     &__item {
-      flex: 1 1 auto;
+      flex: 0 1 auto;
       //padding: 1rem;
     }
   }

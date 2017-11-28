@@ -49,7 +49,7 @@ p {
     stroke: #28181b;
     stroke-width: 10px;
     stroke-linecap: round;
-    max-width: 50%; }
+    width: 68px; }
   .wprecipes__nav {
     margin: 0;
     padding: 0;
@@ -95,16 +95,19 @@ p {
   max-width: 1240px; }
   .wprecipes__description {
     text-align: center;
-    font-size: 1.5rem; }
+    font-size: 1.5rem;
+    display: none; }
     @media (min-width: 768px) and (max-width: 1023px) {
       .wprecipes__description {
+        display: block;
         text-align: right; } }
     @media (min-width: 1024px) {
       .wprecipes__description {
+        display: block;
         text-align: right; } }
   .wprecipes--flex-wrapper {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center; }
     @media (min-width: 768px) and (max-width: 1023px) {
       .wprecipes--flex-wrapper {
@@ -113,7 +116,7 @@ p {
       .wprecipes--flex-wrapper {
         justify-content: space-between; } }
     .wprecipes--flex-wrapper__item {
-      flex: 1 1 auto; }
+      flex: 0 1 auto; }
   .wprecipes__site {
     display: flex;
     flex: 1 1 auto;
@@ -175,6 +178,7 @@ p {
   width: 36px;
   height: 36px;
   position: relative;
+  margin: 0 1rem;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   cursor: pointer; }
