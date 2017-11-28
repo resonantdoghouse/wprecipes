@@ -59,7 +59,7 @@
   margin: 0;
   display: flex;
   flex-flow: row wrap;
-
+  justify-content: space-around;
   &__item {
     flex: 0 1 auto;
   }

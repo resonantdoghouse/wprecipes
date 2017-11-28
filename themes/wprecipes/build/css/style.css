@@ -146,6 +146,7 @@ p {
       display: flex;
       flex-direction: column; }
   .wprecipes__sidebar {
+    text-align: center;
     width: 100%;
     flex: 1 1 100%;
     padding: .5rem 1rem;
@@ -297,7 +298,8 @@ p {
   padding: 0;
   margin: 0;
   display: flex;
-  flex-flow: row wrap; }
+  flex-flow: row wrap;
+  justify-content: space-around; }
   .wprecipes__related-products__item {
     flex: 0 1 auto; }
 
