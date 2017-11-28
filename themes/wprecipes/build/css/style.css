@@ -282,7 +282,6 @@ p {
     justify-content: stretch;
     align-items: stretch; }
     .wprecipes.woocommerce-page .products .product {
-      background: #28181b;
       padding: 1rem;
       flex: 1 1 auto;
       float: none;
@@ -300,7 +299,7 @@ p {
   display: flex;
   flex-flow: row wrap; }
   .wprecipes__related-products__item {
-    flex: 1 1 auto; }
+    flex: 0 1 auto; }
 
 /**
  * Ninja Forms

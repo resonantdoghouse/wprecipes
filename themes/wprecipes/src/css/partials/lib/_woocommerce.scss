@@ -36,7 +36,6 @@
     justify-content: stretch;
     align-items: stretch;
     .product {
-      background: $color-dark;
       padding: 1rem;
       flex: 1 1 auto;
       float: none;
@@ -60,12 +59,9 @@
   margin: 0;
   display: flex;
   flex-flow: row wrap;
-  //justify-content: center;
-  //align-items: center;
-  //align-content: center;
 
   &__item {
-    flex: 1 1 auto;
+    flex: 0 1 auto;
   }
 }
 
