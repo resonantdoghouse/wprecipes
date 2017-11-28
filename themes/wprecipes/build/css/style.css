@@ -23,6 +23,11 @@ body {
   .wprecipes__main h1 {
     text-align: center; }
 
+.svg-hack {
+  width: 50%;
+  position: relative;
+  /* create positioning context for svg */ }
+
 /**
  * Typography
  */
@@ -43,7 +48,8 @@ p {
     fill: #caa8ad;
     stroke: #28181b;
     stroke-width: 10px;
-    padding: .5rem; }
+    stroke-linecap: round;
+    max-width: 50%; }
   .wprecipes__nav {
     margin: 0;
     padding: 0;
@@ -107,8 +113,7 @@ p {
       .wprecipes--flex-wrapper {
         justify-content: space-between; } }
     .wprecipes--flex-wrapper__item {
-      flex: 1 1 auto;
-      padding: 1rem; }
+      flex: 1 1 auto; }
   .wprecipes__site {
     display: flex;
     flex: 1 1 auto;

@@ -28,6 +28,9 @@ body {
   }
 }
 
-
-
+// TODO add utilities partial
+.svg-hack {
+  width: 50%;
+  position: relative; /* create positioning context for svg */
+}
 
