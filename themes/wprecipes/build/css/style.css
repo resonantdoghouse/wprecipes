@@ -18,8 +18,10 @@ img {
 body {
   background: #d6defc; }
 
-.wprecipes__main h1 {
-  text-align: center; }
+.wprecipes__main {
+  min-width: 0; }
+  .wprecipes__main h1 {
+    text-align: center; }
 
 /**
  * Typography
@@ -236,18 +238,14 @@ p {
     .wprecipes__favourites {
       flex-flow: column; } }
 
-.wprecipes__owlcarousel {
-  overflow: hidden;
-  max-width: 100%;
-  text-align: center; }
-  .wprecipes__owlcarousel .owl-carousel {
-    padding: 0 0 1rem 0;
-    border-bottom: 1px solid #caa8ad;
-    margin: 0 0 1rem 0; }
-    .wprecipes__owlcarousel .owl-carousel .owl-stage {
-      display: flex; }
-      .wprecipes__owlcarousel .owl-carousel .owl-stage .owl-item {
-        float: none; }
+.wprecipes__owlcarousel .owl-carousel {
+  padding: 0 0 1rem 0;
+  border-bottom: 1px solid #caa8ad;
+  margin: 0 0 1rem 0; }
+  .wprecipes__owlcarousel .owl-carousel .owl-stage {
+    display: flex; }
+    .wprecipes__owlcarousel .owl-carousel .owl-stage .owl-item {
+      float: none; }
 
 .home .wprecipes__main {
   text-align: center; }
