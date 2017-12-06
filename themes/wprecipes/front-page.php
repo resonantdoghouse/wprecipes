@@ -35,6 +35,7 @@ get_header(); ?>
 
             <section id="wprecipes-posts">
                 <h1><?php _e( 'Posts', 'wprecipes' ); ?></h1>
+
                 <div class="wprecipes__owlcarousel">
                     <div class="owl-carousel owl-theme">
 						<?
@@ -63,6 +64,9 @@ get_header(); ?>
             <section>
                 <h1><?php _e( 'More Recipes', 'wprecipes' ); ?></h1>
 				<?php
+				/**
+				 * Random Recipes
+				 */
 				$args_recipes = array(
 					'post_type'      => 'recipe',
 					'post_status'    => 'publish',
@@ -71,10 +75,9 @@ get_header(); ?>
 					'paged'          => true
 				);
 				$the_query    = new WP_Query( $args_recipes );
-				?>
 
-				<?php
-				if ( $the_query->have_posts() ) { ?>
+				if ( $the_query->have_posts() ): ?>
+
                     <ul class="wprecipes__list">
 						<?php while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
                             <li class="wprecipes__list__item">
@@ -96,19 +99,17 @@ get_header(); ?>
                     </div>
 
 					<?php
-
-
-					/* Restore original Post Data */
 					wp_reset_postdata();
 
-
-				} else {
-					// no posts found
-				}
-
+				else:
+				endif;
 
 				?>
             </section>
+
+
+
+
 
         </main>
 		<? get_sidebar(); ?>
